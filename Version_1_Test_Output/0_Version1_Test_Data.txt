@@ -1,0 +1,19 @@
+jdebarry 10/21/2015
+This is not a substitute for reading the AAARF README file.
+This folder contains test data for running AAARF.
+This should not be used to help interpret biological significance of experimental AAARF runs.  Its sole purpose is to verify that AAARF is installed properly and able to run.
+
+Usage:  perl AAARFv1.pl ZU_1000.fasta
+
+Input Files (These files must be in the same directory before running AAARF):
+ZU_1000.fasta - main input file with sample sequences to be assembled into high-copy number repeats
+formatdb_log - log file generated when ZU_1000.fasta is formatted for BLAST searching
+ZU_1000.fasta.nhr - BLAST database file generated when ZU_1000.fasta is formatted for BLAST searching
+ZU_1000.fasta.nin - BLAST database file generated when ZU_1000.fasta is formatted for BLAST searching
+ZU_1000.fasta.nsq - BLAST database file generated when ZU_1000.fasta is formatted for BLAST searching
+
+Output Files:
+ZU_1000_AAARF.fasta - main output file with pseudomolecule assemblies of high-copy number repeats
+AAARF_log - detailed log of all AAARF activities formatted based on log4Perl perl module
+bl2seq_out - temporary file that contains last bl2seq output (can be ignored)
+clustalw_out - temporary file that contains last clustalw output (can be ignored)
