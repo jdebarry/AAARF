@@ -71,15 +71,14 @@ D) USING AAARF
 			--If you are unsure how to make the required BLAST database files, this should help. If you have a preferred method that should work as 	
 			well. To use this method make sure that your FASTA file of sample sequence data is in the same folder where you want to place you BLAST 
 			database files. From the command line, navigate to the folder where you want to store the database files. Next enter the following 
-			command, replacing the dummy file name "FASTA_FILE" with the name of your FASTA file of sequences every time you see it (three times 
-			total).
+			command, replacing the dummy file name "FASTA_FILE" with the name of your FASTA file of sequences every time you see it.
 
-			cat FASTA_FILE > FASTA_FILE_db; formatdb -i FASTA_FILE_db -p F
+			>formatdb -i FASTA_FILE.fasta -p F
 			
-			--This will produce 5 files. (Using the file name above) 
+			--This will produce 4 files, in addition to FASTA_FILE.fasta
 			
 				formatdb.log 
-				FASTA_FILE_db
+				FASTA_FILE.fasta
 				FASTA_FILE_db.nhr
 				FASTA_FILE_db.nin
 				FASTA_FILE_db.nsq
@@ -111,7 +110,7 @@ D) USING AAARF
 		--Open a command line terminal in the directory where you want to run AAARF (or navigate to that location from the command line). The overall 
 		usage for running AAARF is as follows:
 
-			>perl AAARF.pl FASTA_FILE
+			>perl AAARFv1.pl FASTA_FILE.fasta
 			
 		where ">" is your command line prompt, "perl" tells the machine that you are running a Perl program, "AAARF.pl" is the program that you 
 		want to run and "FASTA_FILE" is the file that contains the sequences that you want to analyze. If both AAARF.pl and FASTA_FILE are in the 
