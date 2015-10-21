@@ -35,7 +35,7 @@ a random sample sequence that initiates a build.
 
 C) REQUIREMENTS AND INSTALLATION
 
---Downloads can be obtained at the AAARF project homepage: https://sourceforge.net/projects/aaarf
+--Downloads can be obtained at the AAARF project homepage: https://github.com/jdebarry/AAARF (previously https://sourceforge.net/projects/aaarf)
 
 --AAARF was developed using MAC OS X and has only been tested on this platform. 
 
