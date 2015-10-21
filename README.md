@@ -3,8 +3,6 @@
 Tracking updates to AAARF parameter inputs, dockerizing, and beyond. Below are the version 1 README notes for installation and use.
 
 A) INTRODUCTION
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
 
 Please report bugs and suggestions to the project main page (https://github.com/jdebarry/AAARF, previously https://sourceforge.net/projects/aaarf) or contact debarryj@gmail.com.
 
@@ -20,8 +18,6 @@ License: GNU Lesser Public License (http://www.gnu.org/copyleft/lesser.html)
 
 
 B) PROJECT SUMMARY
---------------------------------------------------------------------------------
---------------------------------------------------------------------------------
 
 Among the many features of an organism’s genome is a variably sized fraction composed of repeated sequences. These genomic repeats can be 
 differentiated into sequences necessary for the proper form and function of the genome (such as centromeric and ribosomal sequences) and another class 
@@ -38,8 +34,6 @@ a random sample sequence that initiates a build.
 
 
 C) REQUIREMENTS AND INSTALLATION
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
 
 --Downloads can be obtained at the AAARF project homepage: https://sourceforge.net/projects/aaarf
 
@@ -65,8 +59,6 @@ alignment through sequence weighting, position specific gap penalties and weight
 
 
 D) USING AAARF
----------------------------------------------------------------------------------
----------------------------------------------------------------------------------
 
 	1) AAARF Input Files
 
@@ -110,11 +102,11 @@ D) USING AAARF
 		full filepath for the BLAST database file "FASTA_FILE_db" that was generated from the fasta file of sample sequences between the quotes for 
 		each of the two lines. An example is shown below. Make sure to leave the quotes in place and that you don't add any spaces in the path. 
 
-			#----------------------------------------------+
-			#FILEPATH TO BLAST DATABASE OF INPUT SEQUENCES |                                      
-			#----------------------------------------------+
-(Line 97)	my $database = "COMPLETE/FILE/PATH/TO/BLAST_DB"; 
-(Line 98)	my $allSeqFile = "COMPLETE/FILE/PATH/TO/BLAST_DB";
+#----------------------------------------------+
+#FILEPATH TO BLAST DATABASE OF INPUT SEQUENCES |                                      
+#----------------------------------------------+
+Line 97	my $database = "COMPLETE/FILE/PATH/TO/BLAST_DB"; 
+Line 98	my $allSeqFile = "COMPLETE/FILE/PATH/TO/BLAST_DB";
 
 		b) Command Line Operations
 		
@@ -148,9 +140,7 @@ D) USING AAARF
 		output and is for program use. You can ignore this file.
 		
 E) AAARF LOG
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
-	
+
 	1) The Log File
 	
 	--The AAARF log is produced using the Perl logger Log4perl. The idea behind the production of this file is that you can examine AAARF's activities 
@@ -186,16 +176,14 @@ E) AAARF LOG
 	alter the reporting level. To adjust the reporting level change the reporting call in the quotes at line 27 of AAARF.pl. Replace the word, DEBUG, 
 	with any of the reporting levels shown above. Make sure to leave the quotes themselves in place and just change the level.
 
-			#-------------------------------------------------------+
-			#LOGGER INITIATION AND VARIABLES FOR VARIOUS FUNCTIONS |
-			#-------------------------------------------------------+	
-			#Variable that stores the logger level
-(Line 27)	my $AAARF_Log_Level = 'DEBUG';
+#-------------------------------------------------------+
+#LOGGER INITIATION AND VARIABLES FOR VARIOUS FUNCTIONS |
+#-------------------------------------------------------+	
+#Variable that stores the logger level
+my $AAARF_Log_Level = 'DEBUG';
 	
 
 F) PARAMETERS
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
 
 1) Changing Parameters
 	
