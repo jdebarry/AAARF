@@ -6,6 +6,8 @@ A) INTRODUCTION
 -------------------------------------------------------------------------------
 -------------------------------------------------------------------------------
 
+Please report bugs and suggestions to the project main page (https://github.com/jdebarry/AAARF, previously https://sourceforge.net/projects/aaarf) or contact debarryj@gmail.com.
+
 This file contains information for the use of the Assisted Automated Assembler of Repeat Families (AAARF) Algorithm. 
 AAARF is designed to use random unfiltered genomic shotgun sequence data (both Sanger and 454 have been tested) to assemble builds representing 
 families of repeats found in a target genome. 
@@ -347,9 +349,3 @@ my $times_used = 4;            # Maximum number of times that a sequence is used
 		--$minOverlapLen can be changed based on $minCoverLen. 
 	
 		--$times_used can be changed based on the size of the input sequences and the step size ($maxExtendLen).
-		
-G) Contacts
--------------------------------------------------------------------------------
--------------------------------------------------------------------------------
-
-Please report bugs and suggestions to the project main page (https://github.com/jdebarry/AAARF, previously https://sourceforge.net/projects/aaarf) or contact debarryj@gmail.com.
