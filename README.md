@@ -181,7 +181,7 @@ E) AAARF LOG
 
 F) PARAMETERS
 
-1) Changing Parameters
+	1) Changing Parameters
 	
 	--AAARF offers complete control over all parameters affecting build construction. There are two set of parameters. One set governs BLAST and the 
 	MCS construction. The other controls build extension. These parameters can be found under the headings of the same name at the start of the 
