@@ -102,11 +102,9 @@ D) USING AAARF
 		full filepath for the BLAST database file "FASTA_FILE_db" that was generated from the fasta file of sample sequences between the quotes for 
 		each of the two lines. An example is shown below. Make sure to leave the quotes in place and that you don't add any spaces in the path. 
 
-+----------------------------------------------+
-FILEPATH TO BLAST DATABASE OF INPUT SEQUENCES |                                      
-+----------------------------------------------+
-Line 97	my $database = "COMPLETE/FILE/PATH/TO/BLAST_DB"; 
-Line 98	my $allSeqFile = "COMPLETE/FILE/PATH/TO/BLAST_DB";
+			FILEPATH TO BLAST DATABASE OF INPUT SEQUENCES
+			Line 97	my $database = "COMPLETE/FILE/PATH/TO/BLAST_DB"; 
+			Line 98	my $allSeqFile = "COMPLETE/FILE/PATH/TO/BLAST_DB";
 
 		b) Command Line Operations
 		
@@ -176,11 +174,9 @@ E) AAARF LOG
 	alter the reporting level. To adjust the reporting level change the reporting call in the quotes at line 27 of AAARF.pl. Replace the word, DEBUG, 
 	with any of the reporting levels shown above. Make sure to leave the quotes themselves in place and just change the level.
 
-+-------------------------------------------------------+
-LOGGER INITIATION AND VARIABLES FOR VARIOUS FUNCTIONS |
-+-------------------------------------------------------+	
-Variable that stores the logger level
-my $AAARF_Log_Level = 'DEBUG';
+			LOGGER INITIATION AND VARIABLES FOR VARIOUS FUNCTIONS
+			Variable that stores the logger level
+			my $AAARF_Log_Level = 'DEBUG';
 	
 
 F) PARAMETERS
@@ -206,95 +202,80 @@ F) PARAMETERS
 	
 		a) Parameter set for 1,000 Sanger Shotgun Sequences--Average Sequence Size 700bp
 
-+-----------------------------------------------------------------------+
-PROGRAM PARAMETERS (MCS CONSTRUCTION---EXTENSION---MULTIPLE ALIGNMENT) |
-+-----------------------------------------------------------------------+
-+--------------------------------------+
-BLAST AND MCS CONSTRUCTION PARAMETERS |
-+--------------------------------------+
-my $maxBlastHits = 100;       # maximum number of hits used to construct coverage matrix
-my $minBlastMatch = 150;      # minimum length for a BLAST hit
-my $minBlastIdentity = 0.89;  # minimum identity for a BLAST hit
-my $minBlastCoverDepth = 2;   # minimum coverage depth for MCS 
-my $minBlastConsenLen = 150;  # minimum length for MCS
-my $BLAST_e = '1e-25';        # maximum evalue for BLAST hit (replace value inside quotes to adjust)
-my $BL2SEQ_e = '1e-10';       # maximum evalue for BL2SEQ hit (replace value inside quotes to adjust)
+			PROGRAM PARAMETERS (MCS CONSTRUCTION---EXTENSION---MULTIPLE ALIGNMENT)
 
-+---------------------+
-EXTENSION PARAMETERS |
-+---------------------+
-my $maxExtendHits = 1000;      # maximum number of BLAST hits used to extend build
-my $minExtendHits = 1;         # minmum number of BLAST hits used to extend build, must be >= 1
-my $maxExtendLen = 50;         # maximum extension length (step size)
-my $minExtendLen = 0;          # minimum extension length (step size) 
-my $minCoverLen = 150;         # Controls: 1) required size of overlap between MCS and NQ 
-                               # 2) minimum coverage for extension (overlap between sample sequences 
-                               # and MCS during NQ construction) 3) NQ must be at least this long
-my $minOverlapLen = 90;        # minimum required overlap between MCS and New Query Sequence for BL2SEQ,
-                               # based on 60% of minCoverLen
-my $times_used = 13;           # Maximum number of times that a sequence is used in each direction
+			BLAST AND MCS CONSTRUCTION PARAMETERS
+			my $maxBlastHits = 100;       # maximum number of hits used to construct coverage matrix
+			my $minBlastMatch = 150;      # minimum length for a BLAST hit
+			my $minBlastIdentity = 0.89;  # minimum identity for a BLAST hit
+			my $minBlastCoverDepth = 2;   # minimum coverage depth for MCS 
+			my $minBlastConsenLen = 150;  # minimum length for MCS
+			my $BLAST_e = '1e-25';        # maximum evalue for BLAST hit (replace value inside quotes to adjust)
+			my $BL2SEQ_e = '1e-10';       # maximum evalue for BL2SEQ hit (replace value inside quotes to adjust)
+
+			EXTENSION PARAMETERS
+			my $maxExtendHits = 1000;      # maximum number of BLAST hits used to extend build
+			my $minExtendHits = 1;         # minmum number of BLAST hits used to extend build, must be >= 1
+			my $maxExtendLen = 50;         # maximum extension length (step size)
+			my $minExtendLen = 0;          # minimum extension length (step size) 
+			my $minCoverLen = 150;         # Controls: 1) required size of overlap between MCS and NQ 
+			                               # 2) minimum coverage for extension (overlap between sample sequences 
+			                               # and MCS during NQ construction) 3) NQ must be at least this long
+			my $minOverlapLen = 90;        # minimum required overlap between MCS and New Query Sequence for BL2SEQ,
+			                               # based on 60% of minCoverLen
+			my $times_used = 13;           # Maximum number of times that a sequence is used in each direction
 
 
 		b) Parameter set for 10,000 Sanger Shotgun Sequences--Average Sequence Size 700bp
 
-#-----------------------------------------------------------------------+
-#PROGRAM PARAMETERS (MCS CONSTRUCTION---EXTENSION---MULTIPLE ALIGNMENT) |
-#-----------------------------------------------------------------------+
-#--------------------------------------+
-#BLAST AND MCS CONSTRUCTION PARAMETERS |
-#--------------------------------------+
-my $maxBlastHits = 100;       # maximum number of hits used to construct coverage matrix
-my $minBlastMatch = 150;      # minimum length for a BLAST hit
-my $minBlastIdentity = 0.89;  # minimum identity for a BLAST hit
-my $minBlastCoverDepth = 3;   # minimum coverage depth for MCS 
-my $minBlastConsenLen = 150;  # minimum length for MCS
-my $BLAST_e = '1e-25';        # maximum evalue for BLAST hit (replace value inside quotes to adjust)
-my $BL2SEQ_e = '1e-10';       # maximum evalue for BL2SEQ hit (replace value inside quotes to adjust)
+			PROGRAM PARAMETERS (MCS CONSTRUCTION---EXTENSION---MULTIPLE ALIGNMENT) |
 
-#---------------------+
-#EXTENSION PARAMETERS |
-#---------------------+
-my $maxExtendHits = 1000;      # maximum number of BLAST hits used to extend build
-my $minExtendHits = 2;         # minmum number of BLAST hits used to extend build, must be >= 1
-my $maxExtendLen = 50;         # maximum extension length (step size)
-my $minExtendLen = 0;          # minimum extension length (step size) 
-my $minCoverLen = 150;         # Controls: 1) required size of overlap between MCS and NQ 
-                               # 2) minimum coverage for extension (overlap between sample sequences 
-                               # and MCS during NQ construction) 3) NQ must be at least this long
-my $minOverlapLen = 90;        # minimum required overlap between MCS and New Query Sequence for BL2SEQ,
-                               # based on 60% of minCoverLen
-my $times_used = 13;           # Maximum number of times that a sequence is used in each direction
+			BLAST AND MCS CONSTRUCTION PARAMETERS
+			my $maxBlastHits = 100;       # maximum number of hits used to construct coverage matrix
+			my $minBlastMatch = 150;      # minimum length for a BLAST hit
+			my $minBlastIdentity = 0.89;  # minimum identity for a BLAST hit
+			my $minBlastCoverDepth = 3;   # minimum coverage depth for MCS 
+			my $minBlastConsenLen = 150;  # minimum length for MCS
+			my $BLAST_e = '1e-25';        # maximum evalue for BLAST hit (replace value inside quotes to adjust)
+			my $BL2SEQ_e = '1e-10';       # maximum evalue for BL2SEQ hit (replace value inside quotes to adjust)
+
+			EXTENSION PARAMETERS
+			my $maxExtendHits = 1000;      # maximum number of BLAST hits used to extend build
+			my $minExtendHits = 2;         # minmum number of BLAST hits used to extend build, must be >= 1
+			my $maxExtendLen = 50;         # maximum extension length (step size)
+			my $minExtendLen = 0;          # minimum extension length (step size) 
+			my $minCoverLen = 150;         # Controls: 1) required size of overlap between MCS and NQ 
+			                               # 2) minimum coverage for extension (overlap between sample sequences 
+			                               # and MCS during NQ construction) 3) NQ must be at least this long
+			my $minOverlapLen = 90;        # minimum required overlap between MCS and New Query Sequence for BL2SEQ,
+			                               # based on 60% of minCoverLen
+			my $times_used = 13;           # Maximum number of times that a sequence is used in each direction
 
 
 		c) Parameter set for 50,419 454 Shotgun Sequences--Average Sequence Size 100bp
 
-#-----------------------------------------------------------------------+
-#PROGRAM PARAMETERS (MCS CONSTRUCTION---EXTENSION---MULTIPLE ALIGNMENT) |
-#-----------------------------------------------------------------------+
-#--------------------------------------+
-#BLAST AND MCS CONSTRUCTION PARAMETERS |
-#--------------------------------------+
-my $maxBlastHits = 1000;       # maximum number of hits used to construct coverage matrix
-my $minBlastMatch = 30;        # minimum length for a BLAST hit
-my $minBlastIdentity = 0.88;   # minimum identity for a BLAST hit
-my $minBlastCoverDepth = 3;    # minimum coverage depth for MCS 
-my $minBlastConsenLen = 30;    # minimum length for MCS
-my $BLAST_e = '1e-10';         # maximum evalue for BLAST hit (replace value inside quotes to adjust)
-my $BL2SEQ_e = '10';           # maximum evalue for BL2SEQ hit (replace value inside quotes to adjust)
+			PROGRAM PARAMETERS (MCS CONSTRUCTION---EXTENSION---MULTIPLE ALIGNMENT)
 
-#---------------------+
-#EXTENSION PARAMETERS |
-#---------------------+
-my $maxExtendHits = 1000;      # maximum number of BLAST hits used to extend build
-my $minExtendHits = 2;         # minimum number of BLAST hits used to extend build, must be >= 1
-my $maxExtendLen = 40;         # maximum extension length (step size)
-my $minExtendLen = 0;          # minimum extension length (step size) 
-my $minCoverLen = 30;          # Controls: 1) required size of overlap between MCS and NQ 
-                               # 2) minimum coverage for extension (overlap between sample sequences 
-                               # and MCS during NQ construction) 3) NQ must be at least this long
-my $minOverlapLen = 15;        # minimum required overlap between MCS and New Query Sequence for BL2SEQ,
-                               # based on 50% of minCoverLen 
-my $times_used = 4;            # Maximum number of times that a sequence is used in each direction
+			BLAST AND MCS CONSTRUCTION PARAMETERS 
+			my $maxBlastHits = 1000;       # maximum number of hits used to construct coverage matrix
+			my $minBlastMatch = 30;        # minimum length for a BLAST hit
+			my $minBlastIdentity = 0.88;   # minimum identity for a BLAST hit
+			my $minBlastCoverDepth = 3;    # minimum coverage depth for MCS 
+			my $minBlastConsenLen = 30;    # minimum length for MCS
+			my $BLAST_e = '1e-10';         # maximum evalue for BLAST hit (replace value inside quotes to adjust)
+			my $BL2SEQ_e = '10';           # maximum evalue for BL2SEQ hit (replace value inside quotes to adjust)
+
+			EXTENSION PARAMETERS
+						my $maxExtendHits = 1000;      # maximum number of BLAST hits used to extend build
+			my $minExtendHits = 2;         # minimum number of BLAST hits used to extend build, must be >= 1
+			my $maxExtendLen = 40;         # maximum extension length (step size)
+			my $minExtendLen = 0;          # minimum extension length (step size) 
+			my $minCoverLen = 30;          # Controls: 1) required size of overlap between MCS and NQ 
+			                               # 2) minimum coverage for extension (overlap between sample sequences 
+			                               # and MCS during NQ construction) 3) NQ must be at least this long
+			my $minOverlapLen = 15;        # minimum required overlap between MCS and New Query Sequence for BL2SEQ,
+			                               # based on 50% of minCoverLen 
+			my $times_used = 4;            # Maximum number of times that a sequence is used in each direction
 
 	2) General Parameter Guidelines
 	
