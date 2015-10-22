@@ -6,6 +6,7 @@
 #Alignment to "walk" out the repeat family.
 #License: GNU Lesser Public License (http://www.gnu.org/copyleft/lesser.html)
 # Authors: Jeremy DeBarry and Renyi Liu 
+#Reference Publication: http://www.biomedcentral.com/1471-2105/9/235
 #10/5/2015: DeBarry adding Getopt::Long to collect parameters and file paths to blastdb at command line;
 
 #-------+
