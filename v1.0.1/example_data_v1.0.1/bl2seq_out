@@ -1,0 +1,57 @@
+Query= Current_MCS
+         (193 letters)
+
+
+
+>New_Query_Sequence_880
+          Length = 211
+
+ Score =  319 bits (161), Expect = 2e-92
+ Identities = 161/161 (100%)
+ Strand = Plus / Plus
+
+                                                                       
+Query: 1   ggagtcccctggtgcaccggacaggtccggtggtgcaccggacactgtccggtggcacac 60
+           ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 51  ggagtcccctggtgcaccggacaggtccggtggtgcaccggacactgtccggtggcacac 110
+
+                                                                       
+Query: 61  cggacagtccggtgcgccagaccagaggtgccctcggttcccactttgctcctttattga 120
+           ||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+Sbjct: 111 cggacagtccggtgcgccagaccagaggtgccctcggttcccactttgctcctttattga 170
+
+                                                    
+Query: 121 atccaaaacttggtctttttattggctgagtgtgaaccttt 161
+           |||||||||||||||||||||||||||||||||||||||||
+Sbjct: 171 atccaaaacttggtctttttattggctgagtgtgaaccttt 211
+
+
+Lambda     K      H
+    1.37    0.711     1.31 
+
+Gapped
+Lambda     K      H
+    1.37    0.711     1.31 
+
+
+Matrix: blastn matrix:1 -3
+Gap Penalties: Existence: 5, Extension: 2
+Number of Sequences: 1
+Number of Hits to DB: 62
+Number of extensions: 4
+Number of successful extensions: 4
+Number of sequences better than 1.0e-10: 1
+Number of HSP's gapped: 2
+Number of HSP's successfully gapped: 1
+Length of query: 193
+Length of database: 211
+Length adjustment: 7
+Effective length of query: 186
+Effective length of database: 204
+Effective search space:    37944
+Effective search space used:    37944
+X1: 11 (21.8 bits)
+X2: 15 (29.7 bits)
+X3: 50 (99.1 bits)
+S1: 10 (20.3 bits)
+S2: 25 (50.1 bits)
