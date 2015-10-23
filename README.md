@@ -1,5 +1,7 @@
 # AAARF
 10/21/2015 - jdebarry
+If you are viewing this on DockerHub, these notes refer to the GitHub project at https://github.com/jdebarry/AAARF
+
 This project contains:
 
 version 1 with example data, imported form original location at sourceforge (http://sourceforge.net/projects/aaarf/files/) and detailed in this publication: http://www.biomedcentral.com/1471-2105/9/235.  
