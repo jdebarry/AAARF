@@ -1,4 +1,4 @@
-#Needs notes to tell what AAARF is etc
+#See documentation at https://github.com/jdebarry/AAARF for details on AAARF
 
 FROM genomicpariscentre/bioperl:latest
 
@@ -18,7 +18,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y cl
 #install cpan minus modeled from http://perlmaven.com/install-perl-modules-without-root-rights-on-linux-ubuntu-13-10
 RUN apt-get -qq install curl && curl -L http://cpanmin.us | perl - App::cpanminus
 
-# Install BioPerl Run Package last built for Bio::Tools::Run::Alignment::Clustalw; use Bio::Tools::Run::Alignment::TCoffee; use Bio::Tools::Run::StandAloneBlast modeled from genomicpariscentre/bioperl:latest
+# Install BioPerl Run Package last built for Bio::Tools::Run::Alignment::Clustalw; Bio::Tools::Run::Alignment::TCoffee; Bio::Tools::Run::StandAloneBlast modeled from genomicpariscentre/bioperl:latest
 RUN cpanm --force CJFIELDS/BioPerl-Run-1.006900.tar.gz
 
 #Install Log4perl modeled on https://hub.docker.com/r/pamtrak06/rok4-ubuntu14.04/~/dockerfile/
@@ -32,6 +32,3 @@ RUN apt-get update && apt-get install -qqy ncbi-blast+
 ADD https://github.com/jdebarry/AAARF/blob/master/v1.0.1/AAARFv1.0.1.pl /
 
 CMD perl AAARFv1.0.1.pl --inputfile=ZU_1000.fasta
-
-#Any closing commands required?
-
