@@ -1,3 +1,5 @@
+#TEST COMMENT
+
 #See documentation at https://github.com/jdebarry/AAARF for details on AAARF
 
 FROM genomicpariscentre/bioperl:latest
