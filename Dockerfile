@@ -1,11 +1,9 @@
-#TEST COMMENT
-
 #See documentation at https://github.com/jdebarry/AAARF for details on AAARF
 
 FROM genomicpariscentre/bioperl:latest
 
-MAINTAINER Jeremy DeBarry   jdebarry@iplantcollaborative.org
 #modeled on https://github.com/bgruening/docker-recipes/blob/master/coprarna/Dockerfile
+MAINTAINER Jeremy DeBarry   jdebarry@iplantcollaborative.org
 
 #install make
 RUN apt-get -qq install make
