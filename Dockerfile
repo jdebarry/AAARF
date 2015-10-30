@@ -1,34 +1,35 @@
-#See documentation at https://github.com/jdebarry/AAARF for details on AAARF
+FROM ubuntu:14.04
 
-FROM genomicpariscentre/bioperl:latest
-
-#modeled on https://github.com/bgruening/docker-recipes/blob/master/coprarna/Dockerfile
-MAINTAINER Jeremy DeBarry   jdebarry@iplantcollaborative.org
+MAINTAINER Jeremy DeBarry jdebarry@iplantcollaborative.org
 
 #install make
 RUN apt-get -qq install make
 
-#Install bioperl and clustalw
+#Install clustalw modeled on http://www.microhowto.info/howto/perform_an_unattended_installation_of_a_debian_package.html
 RUN echo "deb http://archive.ubuntu.com/ubuntu trusty multiverse" >> /etc/apt/sources.list
 RUN DEBIAN_FRONTEND=noninteractive apt-get -qq update
 
-#RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y bioperl
 RUN DEBIAN_FRONTEND=noninteractive apt-get install --no-install-recommends -y clustalw
 
 #install cpan minus modeled from http://perlmaven.com/install-perl-modules-without-root-rights-on-linux-ubuntu-13-10
 RUN apt-get -qq install curl && curl -L http://cpanmin.us | perl - App::cpanminus
 
-# Install BioPerl Run Package last built for Bio::Tools::Run::Alignment::Clustalw; Bio::Tools::Run::Alignment::TCoffee; Bio::Tools::Run::StandAloneBlast modeled from genomicpariscentre/bioperl:latest
+# Install BioPerl Run Package modeled from genomicpariscentre/bioperl:latest
 RUN cpanm --force CJFIELDS/BioPerl-Run-1.006900.tar.gz
 
-#Install Log4perl modeled on https://hub.docker.com/r/pamtrak06/rok4-ubuntu14.04/~/dockerfile/
-RUN apt-get install -y liblog-log4perl-perl
+#Install Log4perl modeled on https://hub.docker.com/r/sjackman/assemblers/~/dockerfile/
+RUN cpanm Log::Log4perl
 
-#ncbi-blast modeled from https://hub.docker.com/r/robsyme/ncbi-blast/~/dockerfile/
-#may want to use this instead:  https://hub.docker.com/r/simonalpha/ncbi-blast-docker/~/dockerfile/
-RUN apt-get update && apt-get install -qqy ncbi-blast+
+#ncbi-blast modeled from https://bcrc.bio.umass.edu/courses/spring2012/micbio/micbio660/content/blast
+RUN apt-get -qq install blast2
 
-#Get AAARF.pl code
-ADD https://github.com/jdebarry/AAARF/blob/master/v1.0.1/AAARFv1.0.1.pl /
+#Get AAARFv.1.0.1.pl code and copy into $PATH to make it executable anywhere, then make it executable
+COPY [ "./AAARFv1.0.1.pl", "/usr/bin/" ]
+RUN [ "chmod", "+x",  "/usr/bin/AAARFv1.0.1.pl" ]
 
-CMD perl AAARFv1.0.1.pl --inputfile=ZU_1000.fasta
+#create directory for running
+CMD mkdir data
+
+#Running AAARF - Input file and BLASTdb files must be in same folder and this folder must be used as input folder for command line execution of image
+#Command Line Usage of Image: docker run --rm -v=/path/to/host/input/folder:/data image_name --inputFile=/path/to/host/input/file
+ENTRYPOINT ["AAARFv1.0.1.pl"]
