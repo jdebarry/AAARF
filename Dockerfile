@@ -31,5 +31,5 @@ RUN [ "chmod", "+x",  "/usr/bin/AAARFv1.0.1.pl" ]
 CMD mkdir data
 
 #Running AAARF - Input file and BLASTdb files must be in same folder and this folder must be used as input folder for command line execution of image
-#Command Line Usage of Image: docker run --rm -v=/path/to/host/input/folder:/data image_name --inputFile=/path/to/host/input/file
+#Command Line Usage of Image: docker run --rm -v=/path/to/host/input/folder:/data image_name --inputFile=/data/InputFileName
 ENTRYPOINT ["AAARFv1.0.1.pl"]
