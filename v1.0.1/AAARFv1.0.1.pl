@@ -142,6 +142,9 @@ my $seqout = Bio::SeqIO->new(-format=>'fasta', -file=>">$outputFile");
 #my $buildseqout = Bio::SeqIO->new(-format=>'fasta',-file=>">$buildSeqs"); #deactivated until update JD 6_1_07
 
 
+#create blast database for input file
+system("formatdb -i $inputFile -p F");
+
 #read in all sequences and store in a hash
 my $allSeqIn = Bio::SeqIO->new(-format=>'fasta', -file=>$inputFile);
 my %allSeqs;
@@ -283,7 +286,12 @@ if(!$quiet){
             
 if(!$quiet){
 	print "AAARF parameters used:" . "\n" . "\t" . "input file = " . $inputFile . "\n" . "\t" . "output file = " . $outputFile . "\n" . "\t" . "maxBlastHits = " . $maxBlastHits . "\n" . "\t" .  "minBlastMatch = " . $minBlastMatch . "\n" . "\t" .  "minBlastIdentity = " . $minBlastIdentity . "\n" . "\t" .  "minBlastCoverDepth = " . $minBlastCoverDepth . "\n" . "\t" .  "minBlastConsenLen = " . $minBlastConsenLen . "\n" . "\t" .  "BLAST_e = " . $BLAST_e . "\n" . "\t" .  "BL2SEQ_e = " . $BL2SEQ_e . "\n" . "\t" .  "maxExtendHits = " . $maxExtendHits . "\n" . "\t" .  "minExtendHits = " . $minExtendHits . "\n" . "\t" .  "maxExtendLen = " . $maxExtendLen . "\n" . "\t" .  "minExtendLen = " . $minExtendLen . "\n" . "\t" .  "minCoverLen = " . $minCoverLen . "\n" . "\t" .  "minOverlapLen = " . $minOverlapLen . "\n" . "\t" .  "times_used = " . $times_used . "\n";
-            }	        
+            }	    
+            
+#remove last temporary bl2seq and clustal2 files
+system("rm bl2seq_out");
+system("rm clustalw_out");
+    
 
 #------------------+
 #AAARF SUBROUTINES |

@@ -11,15 +11,13 @@ Can add one or more of the following options paramaters:
 
 If not optional parameters are used, program defaults (shown in the example above) will be used.
 
-Input Files (These files must be in the same directory before running AAARF):
+Input Files:
 ZU_1000.fasta - main input file with sample sequences to be assembled into high-copy number repeats
-formatdb_log - log file generated when ZU_1000.fasta is formatted for BLAST searching
-ZU_1000.fasta.nhr - BLAST database file generated when ZU_1000.fasta is formatted for BLAST searching
-ZU_1000.fasta.nin - BLAST database file generated when ZU_1000.fasta is formatted for BLAST searching
-ZU_1000.fasta.nsq - BLAST database file generated when ZU_1000.fasta is formatted for BLAST searching
 
 Output Files:
 ZU_1000_AAARF.fasta - main output file with pseudomolecule assemblies of high-copy number repeats
 AAARF_log - detailed log of all AAARF activities formatted based on log4Perl perl module
-bl2seq_out - temporary file that contains last bl2seq output (can be ignored)
-clustalw_out - temporary file that contains last clustalw output (can be ignored)
+formatdb_log - log file generated when ZU_1000.fasta is formatted for BLAST searching
+ZU_1000.fasta.nhr - BLAST database file generated when ZU_1000.fasta is formatted for BLAST searching
+ZU_1000.fasta.nin - BLAST database file generated when ZU_1000.fasta is formatted for BLAST searching
+ZU_1000.fasta.nsq - BLAST database file generated when ZU_1000.fasta is formatted for BLAST searching
