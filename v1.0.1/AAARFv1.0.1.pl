@@ -120,7 +120,7 @@ GetOptions(
 #----------------+
 #Reading in the sequence input file and preparing output file based on user input
 unless (-e $inputFile) {
-	die "\n" . "Can't open input file." . "\n\n" . "Usage: perl AAARFv1.0.1.pl --inputFile=/path/to/inputfile |0 or more of the following options, otherwise defaults shown here will be used| --maxBlastHits=100 --minBlastMatch=150 --minBlastIdentity=0.89 --minBlastCoverDepth=2 --minBlastConsenLen=150 --BLAST_e=1e-25 --BL2SEQ_e=1e-10 --maxExtendHits=1000 --minExtendHits=1 --maxExtendLen=50 --minExtendLen=0 --minCoverLen=150 --minOverlapLen=90 --times_used=13" . "\n\n" . "Did you make sure your input fasta file and BLAST datbase files are all in the same folder?" . "\n\n" ;
+	die "\n" . "Can't open input file." . "\n\n" . "Usage: perl AAARFv1.0.1.pl --inputFile=/path/to/inputfile |0 or more of the following options, otherwise defaults shown here will be used| --maxBlastHits=100 --minBlastMatch=150 --minBlastIdentity=0.89 --minBlastCoverDepth=2 --minBlastConsenLen=150 --BLAST_e=1e-25 --BL2SEQ_e=1e-10 --maxExtendHits=1000 --minExtendHits=1 --maxExtendLen=50 --minExtendLen=0 --minCoverLen=150 --minOverlapLen=90 --times_used=13" . "\n\n";
      	 }#close else
 unless ($outputFile) { #If no output file name is given, AAARF makes its own based on the name of the input file	
 	#split the input file name into an array up using "." as a delimiter
