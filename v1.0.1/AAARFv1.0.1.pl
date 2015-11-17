@@ -70,22 +70,22 @@ my $minBlastMatch=150;      # minimum length for a BLAST hit, default 150
 my $minBlastIdentity=0.89;  # minimum identity for a BLAST hit, default 0.89
 my $minBlastCoverDepth=2;   # minimum coverage depth for MCS, default 2
 my $minBlastConsenLen=150;  # minimum length for MCS, default 150
-my $BLAST_e='1e-25';        # maximum evalue for BLAST hit (replace value inside quotes), default '1e-25'
-my $BL2SEQ_e='1e-10';       # maximum evalue for BL2SEQ hit (replace value inside quotes), default '1e-10'
+my $BLAST_e='1e-25';        # maximum evalue for BLAST hit, default '1e-25'
+my $BL2SEQ_e='1e-10';       # maximum evalue for BL2SEQ hit, default '1e-10'
 
 #---------------------+
 #EXTENSION PARAMETERS |
 #---------------------+
 my $maxExtendHits=1000;     # maximum number of BLAST hits used to extend build, default 1000
-my $minExtendHits=1;        # minmum number of BLAST hits used to extend build, must be >= 1, default 1
+my $minExtendHits=1;        # minimum number of BLAST hits used to extend build, must be >= 1, default 1
 my $maxExtendLen=50;        # maximum extension length (step size), default 50
-my $minExtendLen=0;         # minimumal extension length , default 0
+my $minExtendLen=0;         # minimum extension length (step size), default 0
 my $minCoverLen=150;        # Controls: 1) required size of overlap between MCS and NQ 
                             # 2) minimum coverage for extension (overlap between sample sequences 
                             # and MCS during NQ construction) 3) NQ must be at least this long, default 150
 my $minOverlapLen=90;       # minimum required overlap between MCS and New Query Sequence for BL2SEQ,
                             # based on 60% of minCoverLen, default 90
-my $times_used=13;          # Maximum number of times that a sequence is used in each direction, default 13
+my $times_used=13;          # maximum number of times that a sequence is used in each extension direction, default 13
 
 #-----------------------------+
 #MULTIPLE ALIGNMENT PARAMETERS|
