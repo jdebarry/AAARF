@@ -6,6 +6,8 @@ Software License: GNU Lesser Public License (http://www.gnu.org/copyleft/lesser.
 
 Code Repository: https://github.com/jdebarry/AAARF
 
+Docker File at: https://hub.docker.com/r/jdebarry/aaarf/
+
 *****IMPORTANT: You can run this version of AAARF in a web browser from the CyVerse (formally iPlant) Discovery Environment. See cyverse.org to learn about CyVerse and run AAARF at https://de.cyverse.org*****
 
 *****IMPORTANT***** AAARF is meant to work with small, random, sample sequence datasets.  AAARF cannot be used to analyze millions of reads from large NGS datasets.  It is not written to take advantage of parallel computing.  If you have large datasets, it is suggested that you randomly sample them and use a sample subset with AAARF.  For best results, it is suggested that you perform an All-by-All BLAST of your sample sequence and order the input fasta file from most to least repetitive prior to running AAARF.
